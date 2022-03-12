@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -21,6 +22,7 @@ public class Login : MonoBehaviour
     void OnClickLoginButton()
     {
         //로그인 버튼이 눌렸을 때 
+        SceneManager.LoadScene("01_Lobby");
     }
     // Update is called once per frame
     void Update()
