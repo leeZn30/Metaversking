@@ -25,11 +25,13 @@ public class Join : MonoBehaviour
     }
     public void OpenJoinPanel()
     {
-        gameObject.SetActive(true);
-        for(int i=0; i<inputObjects.Length; i++)
+        for (int i = 0; i < inputObjects.Length; i++)
         {
             inputObjects[i].reset();
         }
+        
+       gameObject.SetActive(true);
+        
 
 
     }

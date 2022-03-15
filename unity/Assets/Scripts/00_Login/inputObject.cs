@@ -39,7 +39,7 @@ public class inputObject : MonoBehaviour
         if (inputField != null)
         {
             inputField.onValueChanged.AddListener(delegate { checkRegex(); });
-            setRegex_str(regex_str);
+            
 
             if (btn_content == "")
             {
@@ -60,13 +60,16 @@ public class inputObject : MonoBehaviour
     {
         regex_str = str;
         regex = new Regex(regex_str);
-        checkRegex();
     }
     public void reset()
     {
-        if(key=="password2" )
+        if (key=="password2" || key=="email2" )
         {
             setRegex_str("");
+        }
+        else
+        {
+            setRegex_str(regex_str);
         }
 
         if (inputField != null)
@@ -80,8 +83,7 @@ public class inputObject : MonoBehaviour
     void changeUnderTextColor()
     {//완료 상황에 따라 색 바꾸는 함수
         if (isOkay)
-        {
-
+        { 
             underText.text = "완료";
             underText.color = new Color(0f, 255f, 0f);
         }
@@ -110,7 +112,10 @@ public class inputObject : MonoBehaviour
                     isOkay = true;
 
                     if (sub_obj != null)
+                    {
                         sub_obj.setRegex_str(inputField.text);
+                        sub_obj.checkRegex();
+                    }
                     changeUnderTextColor();
                 }
             }
@@ -159,6 +164,7 @@ public class inputObject : MonoBehaviour
 
 
                     sub_obj.setRegex_str("^"+resultString+"$");
+                    sub_obj.checkRegex();
                     isOkay = true;
                     break;
                 case 3:
