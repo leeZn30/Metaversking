@@ -11,14 +11,22 @@ public class SongFolder : MonoBehaviour
     public TextMeshProUGUI name_text;
     private Button btn;
 
+    public delegate void LoadSongListHandler(int id);
+    public event LoadSongListHandler OnClickButton_;
     void Start()
     {
         btn = GetComponent<Button>();
+        btn.onClick.AddListener(OnClickButton);
+        name_text.text = folderName;
         
     }
+    void OnClickButton()
+    {
+        OnClickButton_(id);
+    }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     {
         
     }

@@ -17,6 +17,11 @@ public class SongPage : MonoBehaviour
     {
         gameObject.SetActive(true);
     }
+    public void LoadListPage(int id)
+    {//id에 따라 알맞은 재생목록을 불러오는 함수
+
+
+    }
     // Update is called once per frame
     void Update()
     {
