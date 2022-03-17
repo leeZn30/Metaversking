@@ -193,6 +193,10 @@ public class inputObject : MonoBehaviour
         }
         changeUnderTextColor();
     }
+    public string GetText()
+    {
+        return inputField.text;
+    }
     // Update is called once per frame
     void Update()
     {
