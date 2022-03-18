@@ -7,8 +7,9 @@ using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviourPun
 {
-
+    // 플레이어 설정
     float moveSpeed = 10f;
+    public bool isMoveAble = true;
 
     // 상호작용 버튼
     [SerializeField] bool isInteractiveAble = false;
@@ -31,7 +32,10 @@ public class PlayerControl : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        PlyerMove();
+        if (isMoveAble)
+        {
+            PlyerMove();
+        }
     }
 
     private void PlyerMove()
