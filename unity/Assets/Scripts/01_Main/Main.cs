@@ -88,7 +88,7 @@ public class Main : MonoBehaviour
             {
 
                 Debug.Log(request.downloadHandler.text);
-                SceneManager.LoadScene("01_Lobby");
+                SceneManager.LoadScene("02_Lobby");
             }
             else//로그인 실패
             {
